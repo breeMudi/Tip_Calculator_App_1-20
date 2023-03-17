@@ -27,11 +27,16 @@
     padding: 20px;
 }
 
-.first {
-    /* background-color: #ffffff; */
-    /* border: 2px solid blue; */
-}
 .second { 
     background-color: rgb(210, 58, 149);
     border: 2px solid blue;
 }
+
+.inputs {
+    text-align: right;
+    color:blueviolet;
+    border-radius: 5px;
+    border: none;
+    background-color: whitesmoke;
+}
+
