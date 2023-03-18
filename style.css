@@ -1,22 +1,24 @@
 * {
     box-sizing: border-box;
     font-size: 15px;
+    margin: 0;
+    font-family: 'Space Mono';
 }
 
+body {
+    background-color: #c5e4e7 ;
+}
 .content {
-    /* margin:auto; */
-    /* align-self: center; */
     padding: 20px;
     display: flex;
-    background-color: aquamarine;
+    background-color: #ffffff;
     justify-content: space-between;
     max-width: 500px;
     max-height: 300px;
-    
+
     position: fixed;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
 
 }
@@ -28,15 +30,23 @@
 }
 
 .second { 
-    background-color: rgb(210, 58, 149);
+    /* display: flex; */
+    background-color: #00494d;
     border: 2px solid blue;
+    /* flex-direction: column; */
 }
 
-.inputs {
-    text-align: right;
-    color:blueviolet;
-    border-radius: 5px;
+.inp {
+    width: max-content; height: max-content; background-color: #f4fafa;
+    border: 3px ; border-radius: 5px;
+}
+
+.inputs { 
+    text-align: right; color:#00494d; font-weight: 700;
     border: none;
-    background-color: whitesmoke;
+    background: url('images/icon-dollar.svg') no-repeat;
+    height: 25px;
+    background-size: 7px;
+    background-position-y: 50%;
+    background-position-x: 5px;
 }
-
