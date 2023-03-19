@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Karla:wght@400;500&family=Outfit:wght@400;700&family=Space+Mono:wght@700&display=swap"
       rel="stylesheet"
-      href="https://fonts.google.com/specimen/Space+Mono"
     />
 
     <link
@@ -31,51 +33,59 @@
     </style>
   </head>
   <body>
-    <div class="content">
-      <div class="first">
-        <h3>Bill</h3>
-        <div class="inp">
-          <input class="inputs" placeholder="0.00" />
-        </div>
+    <div class="contentandlogo">
+      <div class="logo">
+        <img src="images/logo.svg" alt="logo of the site" />
+      </div>
+      <div class="content">
+        <div class="first">
+          <h3>Bill</h3>
+          <div class="inp">
+            <input class="inputs" placeholder="0.00" />
+          </div>
 
-        <h3>Select Tip %</h3>
-        <div>
-          <button>5%</button>
-          <button>10%</button>
-          <button>15%</button>
-          <button>20%</button>
-          <button>25%</button>
-          <button>Custom</button>
+          <h3>Select Tip %</h3>
+          <div id="buttondiv">
+            <button class="normalbtn">5%</button>
+            <button class="normalbtn">10%</button>
+            <button class="normalbtn">15%</button>
+            <button class="normalbtn">25%</button>
+            <button class="normalbtn">50%</button>
+            <button class="custom">Custom</button>
+          </div>
+          <h3>Number of People</h3>
+          <div class="inp">
+            <input class="inputss" placeholder="0" />
+          </div>
         </div>
-        <h3>Number of People</h3>
-        <div class="inp">
-          <input class="inputs" placeholder="0.00" />
+        <div class="second">
+          <div class="calculation">
+            <div>
+              <h3>Tip Amount</h3>
+              <p>/ person</p>
+            </div>
+            <h2>$0.00</h2>
+          </div>
+
+          <div class="calculation">
+            <div>
+              <h3>Total</h3>
+              <p>/ person</p>
+            </div>
+            <h2>$0.00</h2>
+          </div>
+          <div class="resetalign">
+            <button class="resetbtn">RESET</button>
+          </div>
         </div>
       </div>
-      <div class="second">
-        <div>
-          <div>
-            <p>Tip Amount</p>
-            <p>/ person</p>
-          </div>
-          <p>$ price</p>
-        </div>
-        <div>
-          <div>
-            <p>Total</p>
-            <p>/ person</p>
-          </div>
-          <p>$ price</p>
-        </div>
-      </div>
-      <button>RESET</button>
-    </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Bridget</a>.
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Bridget</a>.
+      </div>
     </div>
   </body>
 </html>
