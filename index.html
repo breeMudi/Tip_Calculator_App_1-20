@@ -41,21 +41,21 @@
         <div class="first">
           <h3>Bill</h3>
           <div class="inp">
-            <input class="inputs" placeholder="0.00" />
+            <input type="text" id="bill" class="inputs" placeholder="0.00" />
           </div>
-
           <h3>Select Tip %</h3>
           <div id="buttondiv">
-            <button class="normalbtn">5%</button>
-            <button class="normalbtn">10%</button>
-            <button class="normalbtn">15%</button>
-            <button class="normalbtn">25%</button>
-            <button class="normalbtn">50%</button>
-            <button class="custom">Custom</button>
+            <button id="firstbtn" class="normalbtn" onclick="btn()">5%</button>
+            <button class="normalbtn" onclick="btn()">10%</button>
+            <button class="normalbtn" onclick="btn()">15%</button>
+            <button class="normalbtn" onclick="btn()">25%</button>
+            <button class="normalbtn" onclick="btn()">50%</button>
+            <input id="custom" class="normalbtn" placeholder="custom" />
+            <!-- <button class="custom">Custom</button> -->
           </div>
           <h3>Number of People</h3>
           <div class="inp">
-            <input class="inputss" placeholder="0" />
+            <input id="people" class="inputss" placeholder="0" />
           </div>
         </div>
         <div class="second">
@@ -64,7 +64,7 @@
               <h3>Tip Amount</h3>
               <p>/ person</p>
             </div>
-            <h2>$0.00</h2>
+            <h2 id="tipperson">$0.00</h2>
           </div>
 
           <div class="calculation">
@@ -72,7 +72,7 @@
               <h3>Total</h3>
               <p>/ person</p>
             </div>
-            <h2>$0.00</h2>
+            <h2 id="billperson">$0.00</h2>
           </div>
           <div class="resetalign">
             <button class="resetbtn">RESET</button>
@@ -87,5 +87,6 @@
         >. Coded by <a href="#">Bridget</a>.
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
