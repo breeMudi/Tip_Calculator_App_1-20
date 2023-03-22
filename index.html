@@ -45,15 +45,19 @@
           </div>
           <h3>Select Tip %</h3>
           <div id="buttondiv">
-            <button id="n" class="normalbtn" onclick="btn()">5%</button>
-            <button id="10" class="normalbtn" onclick="btn()">10%</button>
-            <button id="15" class="normalbtn" onclick="btn()">15%</button>
-            <button id="25" class="normalbtn" onclick="btn()">25%</button>
-            <button id="50" class="normalbtn" onclick="btn()">50%</button>
+            <button class="normalbtn" onclick="b1()">5%</button>
+            <button class="normalbtn" onclick="b2()">10%</button>
+            <button class="normalbtn" onclick="b3()">15%</button>
+            <button class="normalbtn" onclick="b4()">25%</button>
+            <button class="normalbtn" onclick="b5()">50%</button>
             <input id="custom" class="normalbtn" placeholder="Custom" />
             <!-- <button class="custom">Custom</button> -->
           </div>
-          <h3>Number of People</h3>
+          <div id="peoplequery">
+            <h3>Number of People</h3>
+            <h3 id="warning"></h3>
+          </div>
+
           <div class="inp">
             <input id="people" class="inputss" placeholder="0" />
           </div>
@@ -75,7 +79,7 @@
             <h2 id="billperson">$0.00</h2>
           </div>
           <div class="resetalign">
-            <button class="resetbtn">RESET</button>
+            <button onclick="resets()" class="resetbtn">RESET</button>
           </div>
         </div>
       </div>
