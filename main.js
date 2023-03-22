@@ -1,62 +1,72 @@
-let bills = document.getElementById('bill')
-let people = document.getElementById('people')
-let percent = 0
+const bill = document.getElementById('bill')
+const people = document.getElementById('people')
+let billPerson = document.getElementById('billperson')
+let tipPerson = document.getElementById('tipperson')
+let custom = document.getElementById('custom')
 
-// declare and asign buttons
-const btn5 = document.getElementById('n')
-const btn10 = document.getElementById('10')
-const btn15 = document.getElementById('15')
-const btn25 = document.getElementById('25')
-const btn50 = document.getElementById('50')
-const customInput = document.getElementById('custom')
+// declare and asign value placeholders
+let bill_record = 0
+let numberOfPeople = 0
+let perc = 0
 
 
-bills.addEventListener('keyup', (e) => {
+bill.addEventListener('keyup', (e) => {
     if (e.keyCode == 13){
-        document.getElementById('billperson').textContent='$'+(bills.value)
+        bill_record = bill.value   
+        console.log(bill_record)     
     }
 })
 
 people.addEventListener('keyup', (e) => {
     if (e.keyCode == 13){
-        document.getElementById('tipperson').textContent='$'+(bills.value/(people.value)).toFixed(2)
+        numberOfPeople = people.value
+        console.log(numberOfPeople)
+        document.getElementById('warning').textContent = " "
     }
 })
 
-// function btn(butn){
-//     percent = Number(butn.id)
-// }
-if (btn5.click){
-    percent = 0.05
-}
-else if (btn10){
-    percent = 0.1
-}
-else if (btn15){
-    percent = 0.15
-}
-else if (btn20){
-    percent = 0.2
-}
-else if (btn25){
-    percent = 0.25
-}
-else if (btn50){
-    percent = 0.5
-}
-else{
-    percent = 2
+custom.addEventListener('keyup', (e) => {
+    if (e.keyCode == 13){
+        perc = (custom.value) / 100
+        console.log('custom percentages '+perc)
+        calculation()
+    }
+})
+
+function calculation (){
+    if (numberOfPeople > 0) {
+    document.getElementById('warning').textContent = " "
+    const billPerPerson = bill_record / numberOfPeople
+    const tipPerPerson = billPerPerson * perc
+    const finalBill = billPerPerson + tipPerPerson
+    console.log(finalBill)
+    tipPerson.textContent='$'+(tipPerPerson).toFixed(2)
+    billPerson.textContent='$'+(finalBill).toFixed(2)
+    console.log(tipPerson)
+    console.log(billPerson)
+    }
+    else{
+        console.log("Can't be zero")
+        document.getElementById('warning').textContent = "Can't be zero"
+    }
 }
 
-function btn(){
-    document.getElementById('tipperson').textContent='$'+((bills.value * percent)/(people.value)).toFixed(2)
+function b1 () {perc = 0.05; calculation()}
+function b2 () {perc = 0.10; calculation()}
+function b3 () {perc = 0.15; calculation()}
+function b4 () {perc = 0.25; calculation()}
+function b5 () {perc = 0.50; calculation()}
+
+function resets () {
+    console.log('bill record before is' + bill_record)
+    billPerson.textContent='$0.00'
+    tipPerson.textContent='$0.00'
+    bill_record=0
+    numberOfPeople=0
+    perc=0
+    console.log('bill record is' +bill_record)
+    bill.value = ''
+    people.value = ''
+    custom.value = ''
+    document.getElementById('warning').textContent = " "
 }
-// The calculations:
-// const billp = bills.value * percentages
-//     console.log(billp)
-//     document.getElementById('tipperson').textContent=billp
-
-
-
-// document.getElementById('billperson').textContent='$'+(bills.value/(people.value)).toFixed(2)
-
