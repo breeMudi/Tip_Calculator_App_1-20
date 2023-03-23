@@ -11,25 +11,27 @@ let perc = 0
 
 
 bill.addEventListener('keyup', (e) => {
-    if (e.keyCode == 13){
+    if (e.keyCode == 13 || e.keyCode == 9){
         bill_record = bill.value   
-        console.log(bill_record)     
+        // console.log(bill_record)     
     }
 })
 
 people.addEventListener('keyup', (e) => {
-    if (e.keyCode == 13){
+    if (e.keyCode == 13 || e.keyCode == 9){
         numberOfPeople = people.value
-        console.log(numberOfPeople)
+        // console.log(numberOfPeople)
         document.getElementById('warning').textContent = " "
     }
 })
 
 custom.addEventListener('keyup', (e) => {
-    if (e.keyCode == 13){
-        perc = (custom.value) / 100
-        console.log('custom percentages '+perc)
-        calculation()
+    if (e.keyCode == 13 || e.keyCode == 9){
+        if (custom.value > 0){
+            perc = (custom.value) / 100
+            // console.log('custom percentages '+perc)
+            calculation()
+        }
     }
 })
 
@@ -39,32 +41,33 @@ function calculation (){
     const billPerPerson = bill_record / numberOfPeople
     const tipPerPerson = billPerPerson * perc
     const finalBill = billPerPerson + tipPerPerson
-    console.log(finalBill)
+    // console.log('input bill'+bill_record)
+    // console.log('input number of ppl'+numberOfPeople)
     tipPerson.textContent='$'+(tipPerPerson).toFixed(2)
     billPerson.textContent='$'+(finalBill).toFixed(2)
-    console.log(tipPerson)
-    console.log(billPerson)
+    // console.log(tipPerson)
+    // console.log(billPerson)
     }
     else{
-        console.log("Can't be zero")
+        // console.log("Can't be zero")
         document.getElementById('warning').textContent = "Can't be zero"
     }
 }
 
-function b1 () {perc = 0.05; calculation()}
-function b2 () {perc = 0.10; calculation()}
-function b3 () {perc = 0.15; calculation()}
-function b4 () {perc = 0.25; calculation()}
-function b5 () {perc = 0.50; calculation()}
+function b1 () {perc = 0.05; calculation(); custom.value = ''}
+function b2 () {perc = 0.10; calculation(); custom.value = ''}
+function b3 () {perc = 0.15; calculation(); custom.value = ''}
+function b4 () {perc = 0.25; calculation(); custom.value = ''}
+function b5 () {perc = 0.50; calculation(); custom.value = ''}
 
 function resets () {
-    console.log('bill record before is' + bill_record)
+    // console.log('bill record before is' + bill_record)
     billPerson.textContent='$0.00'
     tipPerson.textContent='$0.00'
     bill_record=0
     numberOfPeople=0
     perc=0
-    console.log('bill record is' +bill_record)
+    // console.log('bill record is' +bill_record)
     bill.value = ''
     people.value = ''
     custom.value = ''
